@@ -7,7 +7,7 @@ variable "table_name" {
 variable "code_bucket_name" {
   description = "The name of the S3 bucket to store Lambda source code"
   type        = string
-  default = "synchronous-api-source-code-bucket"
+  default = "synchronous-api-source-code-bucket-app00002"
 }
 
 variable "app_identifier" {
