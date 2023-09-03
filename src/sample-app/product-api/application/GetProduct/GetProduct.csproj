@@ -15,7 +15,7 @@
     <PackageReference Include="AWS.Lambda.Powertools.Metrics" Version="0.0.1-preview.1" />
     <PackageReference Include="AWS.Lambda.Powertools.Tracing" Version="0.0.1-preview.1" />
     <PackageReference Include="AWSXRayRecorder" Version="2.11.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

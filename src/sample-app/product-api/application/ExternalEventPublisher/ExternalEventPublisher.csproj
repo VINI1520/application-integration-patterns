@@ -19,7 +19,7 @@
     <PackageReference Include="AWSSDK.EventBridge" Version="3.7.5.51" />
     <PackageReference Include="AWSSDK.SimpleSystemsManagement" Version="3.7.17.42" />
     <PackageReference Include="AWSXRayRecorder" Version="2.11.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

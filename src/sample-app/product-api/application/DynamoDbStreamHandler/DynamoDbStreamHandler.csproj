@@ -14,7 +14,7 @@
     <PackageReference Include="AWS.Lambda.Powertools.Logging" Version="0.0.1-preview.1" />
     <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.4.16" />
     <PackageReference Include="AWSXRayRecorder" Version="2.11.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -10,7 +10,7 @@ All the sample patterns in this repository have a corresponding walkthrough vide
 
 ### Prerequisites
 
-- [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - An active AWS account
 
