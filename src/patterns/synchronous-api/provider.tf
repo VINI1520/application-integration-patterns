@@ -8,7 +8,7 @@ terraform {
 
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-gama-${var.appapiid}"
+    bucket = "terraform-gama-appid00002"
     key    = "dev/terraform.tfstate"
     region = "us-east-1"
 
