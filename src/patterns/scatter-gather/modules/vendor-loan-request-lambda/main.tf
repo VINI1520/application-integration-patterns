@@ -1,7 +1,7 @@
 module lambda_vendor_loan_quote_generator {
   source = "../lambda-function"
   lambda_bucket_id = var.lambda_bucket_id
-  publish_dir = "${path.module}/../../functions/VendorLoanQuoteGenerator/bin/Release/net6.0/linux-x64/publish"
+  publish_dir = "${path.module}/../../functions/VendorLoanQuoteGenerator/bin/Release/net7.0/linux-x64/publish"
   zip_file = "VendorLoanQuoteGenerator.zip"
   function_name = "VendorLoanQuoteGenerator_${replace(var.vendor_name, " ", "_")}"
   lambda_handler = "VendorLoanQuoteGenerator::VendorLoanQuoteGenerator.Function::FunctionHandler"

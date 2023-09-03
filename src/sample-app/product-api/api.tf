@@ -31,7 +31,7 @@ module "iam_policies" {
 module "create_product_lambda" {
   source           = "../modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/application/CreateProduct/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/application/CreateProduct/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "CreateProduct.zip"
   function_name    = "CreateProduct"
   lambda_handler   = "CreateProduct::CreateProduct.Function::TracedFunctionHandler"
@@ -72,7 +72,7 @@ resource "aws_iam_role_policy_attachment" "create_product_lambda_sns_publish" {
 module "get_product_lambda" {
   source           = "../modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/application/GetProduct/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/application/GetProduct/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "GetProduct.zip"
   function_name    = "GetProduct"
   lambda_handler   = "GetProduct::GetProduct.Function::TracedFunctionHandler"
@@ -108,7 +108,7 @@ resource "aws_iam_role_policy_attachment" "get_product_lambda_cw_metrics" {
 module "update_product_lambda" {
   source           = "../modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/application/UpdateProduct/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/application/UpdateProduct/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "UpdateProduct.zip"
   function_name    = "UpdateProduct"
   lambda_handler   = "UpdateProduct::UpdateProduct.Function::TracedFunctionHandler"
@@ -144,7 +144,7 @@ resource "aws_iam_role_policy_attachment" "update_product_lambda_cw_metrics" {
 module "delete_product_lambda" {
   source           = "../modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/application/DeleteProduct/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/application/DeleteProduct/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "DeleteProduct.zip"
   function_name    = "DeleteProduct"
   lambda_handler   = "DeleteProduct::DeleteProduct.Function::TracedFunctionHandler"

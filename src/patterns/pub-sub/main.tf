@@ -39,7 +39,7 @@ module "api_gateway" {
 module "event_bridge_publisher_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/EventBridgePublisher/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/EventBridgePublisher/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "EventBridgePublisher.zip"
   function_name    = "EventBridgePublisher"
   lambda_handler   = "EventBridgePublisher::EventBridgePublisher.Function::FunctionHandler"
@@ -68,7 +68,7 @@ resource "aws_iam_role_policy_attachment" "event_publisher_function_put_events" 
 module "event_bridge_subscriber_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/EventBridgeSubscriber/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/EventBridgeSubscriber/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "EventBridgeSubscriber.zip"
   function_name    = "EventBridgeSubscriber"
   lambda_handler   = "EventBridgeSubscriber::EventBridgeSubscriber.Function::FunctionHandler"
@@ -102,7 +102,7 @@ EOF
 module "sns_publisher_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/SNSPublisher/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/SNSPublisher/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "SNSPublisher.zip"
   function_name    = "SNSPublisher"
   lambda_handler   = "SNSPublisher::SNSPublisher.Function::FunctionHandler"
@@ -131,7 +131,7 @@ resource "aws_iam_role_policy_attachment" "sns_publisher_function_sns_publish" {
 module "sns_subscriber_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/SNSSubscriber/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/SNSSubscriber/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "SNSSubscriber.zip"
   function_name    = "SNSSubscriber"
   lambda_handler   = "SNSSubscriber::SNSSubscriber.Function::FunctionHandler"

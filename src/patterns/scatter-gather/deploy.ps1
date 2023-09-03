@@ -1,2 +1,2 @@
-dotnet publish .\functions\ScatterGatherFunctions.sln --configuration "Release" --framework "net6.0" /p:GenerateRuntimeConfigurationFiles=true --runtime linux-x64 --self-contained false
+dotnet publish .\functions\ScatterGatherFunctions.sln --configuration "Release" --framework "net7.0" /p:GenerateRuntimeConfigurationFiles=true --runtime linux-x64 --self-contained false
 terraform apply

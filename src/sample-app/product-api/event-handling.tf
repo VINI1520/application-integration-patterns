@@ -14,7 +14,7 @@ resource "aws_sns_topic" "product_deleted_topic" {
 module "dynamo_db_stream_handler" {
   source           = "../modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/application/DynamoDbStreamHandler/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/application/DynamoDbStreamHandler/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "DynamoDbStreamHandler.zip"
   function_name    = "DynamoDbStreamHandler"
   lambda_handler   = "DynamoDbStreamHandler::DynamoDbStreamHandler.Function::TracedFunctionHandler"
@@ -95,7 +95,7 @@ POLICY
 module "update_product_catalogue_lambda" {
   source           = "../modules/sqs-sourced-lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/application/UpdateProductCatalogue/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/application/UpdateProductCatalogue/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "UpdateProductCatalogue.zip"
   function_name    = "UpdateProductCatalogue"
   lambda_handler   = "UpdateProductCatalogue::UpdateProductCatalogue.Function::TracedFunctionHandler"
@@ -160,7 +160,7 @@ POLICY
 module "external_event_publishing_lambda" {
   source           = "../modules/sqs-sourced-lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/application/ExternalEventPublisher/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/application/ExternalEventPublisher/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "ExternalEventPublisher.zip"
   function_name    = "ExternalEventPublisher"
   lambda_handler   = "ExternalEventPublisher::ExternalEventPublisher.Function::TracedFunctionHandler"

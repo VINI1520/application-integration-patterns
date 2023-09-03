@@ -27,7 +27,7 @@ module "iam_policies" {
 module "create_product_lambda" {
   source = "./tf-modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir = "${path.module}/application/CreateProduct/bin/Release/net6.0/linux-x64/publish"
+  publish_dir = "${path.module}/application/CreateProduct/bin/Release/net7.0/linux-x64/publish"
   zip_file = "CreateProduct.zip"
   function_name = "CreateProduct"
   lambda_handler = "CreateProduct::CreateProduct.Function::FunctionHandler"
@@ -60,7 +60,7 @@ resource "aws_iam_role_policy_attachment" "create_product_lambda_cw_metrics" {
 module "get_product_lambda" {
   source = "./tf-modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir = "${path.module}/application/GetProduct/bin/Release/net6.0/linux-x64/publish"
+  publish_dir = "${path.module}/application/GetProduct/bin/Release/net7.0/linux-x64/publish"
   zip_file = "GetProduct.zip"
   function_name = "GetProduct"
   lambda_handler = "GetProduct::GetProduct.Function::FunctionHandler"

@@ -35,7 +35,7 @@ module "api_gateway" {
 module "event_bridge_publisher_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/NewCustomerPublisher/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/NewCustomerPublisher/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "NewCustomerPublisher.zip"
   function_name    = "NewCustomerPublisher"
   lambda_handler   = "NewCustomerPublisher::NewCustomerPublisher.Function::FunctionHandler"
@@ -123,7 +123,7 @@ resource "aws_cloudwatch_event_target" "customer_created_sqs_target" {
 module "membership_customer_created_event_adapter" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/MembershipCustomerCreatedAdapter/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/MembershipCustomerCreatedAdapter/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "MembershipCustomerCreatedAdapter.zip"
   function_name    = "MembershipCustomerCreatedAdapter"
   lambda_handler   = "MembershipCustomerCreatedAdapter::MembershipCustomerCreatedAdapter.Function::FunctionHandler"
@@ -174,7 +174,7 @@ resource "aws_iam_role_policy_attachment" "sns_publisher_function_sns_publish" {
 module "membership_assign_points_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/MembershipAssignPoints/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/MembershipAssignPoints/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "MembershipAssignPoints.zip"
   function_name    = "MembershipAssignPoints"
   lambda_handler   = "MembershipAssignPoints::MembershipAssignPoints.Function::FunctionHandler"
@@ -202,7 +202,7 @@ resource "aws_sns_topic_subscription" "assign_points_subscription" {
 module "membership_update_analytics_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/MembershipUpdateAnalytics/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/MembershipUpdateAnalytics/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "MembershipUpdateAnalytics.zip"
   function_name    = "MembershipUpdateAnalytics"
   lambda_handler   = "MembershipUpdateAnalytics::MembershipUpdateAnalytics.Function::FunctionHandler"
@@ -230,7 +230,7 @@ resource "aws_sns_topic_subscription" "update_analytics_subscription" {
 module "membership_send_welcome_email_lambda" {
   source           = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir      = "${path.module}/functions/MembershipSendWelcomeEmail/bin/Release/net6.0/linux-x64/publish"
+  publish_dir      = "${path.module}/functions/MembershipSendWelcomeEmail/bin/Release/net7.0/linux-x64/publish"
   zip_file         = "MembershipSendWelcomeEmail.zip"
   function_name    = "MembershipSendWelcomeEmail"
   lambda_handler   = "MembershipSendWelcomeEmail::MembershipSendWelcomeEmail.Function::FunctionHandler"

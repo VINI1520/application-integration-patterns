@@ -79,7 +79,7 @@ module "vendor-loan-request-lambda_friendly_bank" {
 module "vendor_loan_response_handler_lambda" {
   source = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir = "${path.module}/functions/VendorLoanQuoteResponseHandler/bin/Release/net6.0/linux-x64/publish"
+  publish_dir = "${path.module}/functions/VendorLoanQuoteResponseHandler/bin/Release/net7.0/linux-x64/publish"
   zip_file = "VendorLoanQuoteResponseHandler.zip"
   function_name = "VendorLoanQuoteResponseHandler"
   lambda_handler = "VendorLoanQuoteResponseHandler::VendorLoanQuoteResponseHandler.Function::FunctionHandler"
@@ -112,7 +112,7 @@ EOF
 module "aggregator_function" {
   source = "./modules/lambda-function"
   lambda_bucket_id = aws_s3_bucket.lambda_bucket.id
-  publish_dir = "${path.module}/functions/Aggregator/bin/Release/net6.0/linux-x64/publish"
+  publish_dir = "${path.module}/functions/Aggregator/bin/Release/net7.0/linux-x64/publish"
   zip_file = "Aggregator.zip"
   function_name = "Aggregator"
   lambda_handler = "Aggregator::Aggregator.Function::FunctionHandler"
