@@ -8,7 +8,7 @@ on:
         default: 'Network Dev'
         type: string
 jobs:
-  provision-ec2:
+  provision-api-dotnet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
