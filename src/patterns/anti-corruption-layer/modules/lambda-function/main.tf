@@ -18,7 +18,7 @@ resource "aws_lambda_function" "function" {
   function_name = var.function_name
   s3_bucket = var.lambda_bucket_id
   s3_key    = aws_s3_object.lambda_bundle.key
-  runtime = "dotnet6"
+  runtime = "dotnet7"
   handler = var.lambda_handler
   source_code_hash = data.archive_file.lambda_archive.output_base64sha256
   role = aws_iam_role.lambda_function_role.arn
