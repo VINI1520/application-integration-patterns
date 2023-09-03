@@ -10,7 +10,7 @@ resource "aws_dynamodb_table" "synchornous_api_table" {
 }
 
 resource "random_pet" "lambda_bucket_name" {
-  prefix = "synchronous-api-bucket-appid00002"
+  prefix = "appid00002-synchronous-api"
   length = 4
 }
 
