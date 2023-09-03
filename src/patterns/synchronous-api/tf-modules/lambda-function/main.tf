@@ -40,7 +40,7 @@ resource "aws_cloudwatch_log_group" "aggregator" {
 resource "aws_iam_role" "lambda_function_role" {
   name = "FunctionIamRole_${var.function_name}"
   assume_role_policy = jsonencode({
-    Version = "2023-01-01"
+    Version = "2012-10-17"
     Statement = [{
       Action = "sts:AssumeRole"
       Effect = "Allow"
