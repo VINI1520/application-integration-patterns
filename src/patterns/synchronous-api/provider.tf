@@ -5,6 +5,18 @@ terraform {
       version = "~> 4.0"
     }
   }
+
+  # Adding Backend as S3 for Remote State Storage
+  backend "s3" {
+    bucket = "terraform-gama-${var.appapiid}"
+    key    = "dev/terraform.tfstate"
+    region = "us-east-1"
+
+    # For State Locking
+    dynamodb_table = "terraform-dev-state-table"    
+   
+  }
+
 }
 
 # Configure the AWS Provider
