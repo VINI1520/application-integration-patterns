@@ -9,14 +9,14 @@ resource "aws_dynamodb_table" "synchornous_api_table" {
   }
 }
 
-resource "random_string" "lambda_bucket_name" {
+resource "random_pet" "lambda_bucket_name" {
   prefix = "synchronous-api-source-code-bucket-appid00002"
   length = 6
 }
 
 # Create S3 bucket to store our application source code.
 resource "aws_s3_bucket" "lambda_bucket" {
-  bucket = random_string.lambda_bucket_name.id
+  bucket = random_pet.lambda_bucket_name.id
   force_destroy = true
 }
 
