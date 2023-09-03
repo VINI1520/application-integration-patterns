@@ -13,9 +13,5 @@ variable "code_bucket_name" {
 variable "app_identifier" {
   description = "The identifier of the application"
   type        = string
-  default = ""
-  validation {
-    condition = length(var.app_identifier) > 1 && substr(var.app_identifier, 0, 5) == "appid"
-    error_message = "The app_identifier value must be a valid appid, starting with \"appid\"."
-  }
+  default = "appid"
 }
