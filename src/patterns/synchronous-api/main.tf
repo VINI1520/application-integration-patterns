@@ -9,12 +9,27 @@ resource "aws_dynamodb_table" "synchornous_api_table" {
   }
 }
 
+resource "random_string" "lambda_bucket_name" {
+  length  = 12
+  upper   = false
+  number  = false
+  lower   = true
+  special = false
+}
+
 # Create S3 bucket to store our application source code.
 resource "aws_s3_bucket" "lambda_bucket" {
-  bucket = var.code_bucket_name
-
-  acl           = "private"
+  bucket = random_string.lambda_bucket_name.id
   force_destroy = true
+}
+
+resource "aws_s3_bucket_public_access_block" "lambda_bucket" {
+  bucket = aws_s3_bucket.lambda_bucket.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 # Initialize module containing IAM policies.
