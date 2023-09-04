@@ -30,6 +30,7 @@ jobs:
         env:
           TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
         run: |
+          cd src/patterns/synchronous-api
           terraform init
           terraform import
           terraform destroy -auto-approve
