@@ -1,4 +1,4 @@
-name: Provision Api DotNet 
+name: Destroy Api DotNet 
 on:
   workflow_dispatch:
     inputs:
